@@ -1,0 +1,146 @@
+:root {
+  --primary-blue: #2a68af;
+  --primary-dark-blue: #4883bf;
+  --black: #1b1b1e;
+  --red: #ed254e;
+  --yellow: #f9dc5c;
+  --white: #fcfcfc;
+  --green: #6baa75;
+  --orange: #ec7d10;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+#sidebar {
+  background-color: var(--primary-dark-blue);
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+#sidebar .brand {
+  font-size: 3rem;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px 0px;
+}
+
+#sidebar ul li:hover {
+  background-color: rgba(169, 173, 173, 0.2);
+}
+
+#sidebar ul li.active {
+  background-color: #70777a;
+}
+
+#sidebar span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+#sidebar #project-form {
+  display: flex;
+}
+
+#sidebar #project-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar #project-form.hidden {
+  display: none;
+}
+
+#content {
+  background-color: var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+.fa {
+  font-size: 4rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#content .top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgba(169, 173, 173, 0.2);
+  padding: 20px;
+}
+
+#content .top fieldset {
+  border: none;
+  display: flex;
+  gap: 10px;
+}
+
+#content .top form input {
+  border: none;
+  height: 30px;
+  font-size: 1.2rem;
+  padding:5px;
+}
+
+#content .top form.hidden {
+  display: none;
+}
+
+#content #todo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 30px;
+}
+
+#content #todo-list .todo-item {
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.todo-item.medium {
+  border-top: 10px solid var(--yellow);
+}
+.todo-item.high {
+  border-top: 10px solid var(--orange);
+}
+.todo-item.critical {
+  border-top: 10px solid var(--red);
+}
+.todo-item.low {
+  border-top: 10px solid var(--green);
+}
+
+.fa:hover {
+  transform: scale(1.1);
+}

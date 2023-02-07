@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/27eef9b912.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="brand">TodoApp</div>
+      <ul id="project-list">
+        <li class="project active" data-id="default">Default</li>
+      </ul>
+      <span id="new-project"
+        ><i class="fa-regular fa-square-plus"></i> New Project</span
+      >
+      <form action="#" id="project-form" class="hidden">
+        <fieldset>
+          <input type="text" name="name" placeholder="Project name"/>
+          <button type="submit">Add</button>
+        </fieldset>
+      </form>
+    </div>
+    <div id="content">
+      <div class="top">
+        <i class="fa fa-solid fa-circle-plus toggle-form"></i>
+        <form action="#" class="hidden" id="todo-form">
+          <fieldset>
+            <input name="title" type="text" placeholder="Title"/>
+            <input name="description" type="text" placeholder="Description"/>
+            <input name="dueDate" type="date" />
+            <input name="priority" type="range" min="0" max="3" />
+            <button type="submit">Add</button>
+          </fieldset>
+        </form>
+      </div>
+      <div id="todo-list"></div>
+    </div>
+  </body>
+</html>
