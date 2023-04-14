@@ -1,10 +1,11 @@
 :root {
-  --primary-blue: #2a68af;
-  --primary-dark-blue: #4883bf;
+  --primary-blue: #3073c0;
+  --primary-dark-blue: #5d94ca;
+  --primary-darker-blue: #004488;
   --black: #1b1b1e;
   --red: #ed254e;
   --yellow: #f9dc5c;
-  --white: #fcfcfc;
+  --white: #fff5f5;
   --green: #6baa75;
   --orange: #ec7d10;
   font-family: 'Roboto', sans-serif;
@@ -47,7 +48,7 @@ body {
 }
 
 #sidebar ul li.active {
-  background-color: #70777a;
+  background-color: rgba(169, 173, 173, 0.3);
 }
 
 #sidebar span {
@@ -81,7 +82,7 @@ body {
   font-size: 4rem;
   color: var(--white);
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 #content .top {
@@ -111,7 +112,8 @@ body {
 
 #content #todo-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 10px;
   padding: 30px;
 }
@@ -120,12 +122,82 @@ body {
   background-color: var(--white);
   padding: 15px;
   border-radius: 10px;
-  transition: 0.3s;
+  transition: 15s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.todo-item:hover {
-  transform: translateY(-2px);
+.todo-item i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: var(--primary-blue);
+}
+
+.todo-item h2 {
+  margin: 2px;
+}
+
+.todo-item .todo-item__checklist {
+  background-color: var(--primary-darker-blue);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.checklist-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.checklist-control input {
+  width: 100%;
+  height: 20px;
+  border: none;
+  background: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.checklist-control input:focus {
+  outline: none;
+}
+
+.checklist-control input::placeholder {
+  color: rgb(207, 207, 207);
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.checklist-control i {
+  color: white;
   cursor: pointer;
+}
+
+.todo-item #checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item #checklist li {
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+
+.todo-item #checklist li.finished {
+  text-decoration: line-through;
+}
+
+.todo-item #checklist li:hover {
+  background-color: rgba(169, 173, 173, 0.2);
 }
 
 .todo-item.medium {
@@ -142,5 +214,5 @@ body {
 }
 
 .fa:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(180deg);
 }

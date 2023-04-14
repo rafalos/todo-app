@@ -2,7 +2,7 @@ import {
   toggleToDoForm,
   toggleProjectForm,
   renderTodos,
-  setSelectedProject
+  setSelectedProject,
 } from './DOMcontroller';
 import { addNewTodo } from './todoController';
 import {
